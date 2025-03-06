@@ -72,11 +72,11 @@ Tools • Dart 3.7.0 • DevTools 2.42.2
 
 如果您正在为 `Android`平台构建，您还需要[安装并配置](https://developer.android.google.cn/studio) `Android Command Line Tools`。
 
-如果你正在为 `iOS/iPadOS/macOS`平台构建，您还需要[安装并配置](https://apps.apple.com/app/id497799835) `Xcode`。
+如果您正在为 `iOS/iPadOS/macOS`平台构建，您还需要[安装并配置](https://apps.apple.com/app/id497799835) `Xcode`。
 
-确定配置正确后，你需要首先在项目根目录下运行 
+确定配置正确后，您需要首先在项目根目录下运行： 
 
-```
+```shell
 flutter pub get
 flutter pub global activate intl_utils
 dart run intl_utils:generate

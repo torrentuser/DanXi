@@ -81,9 +81,9 @@ If you are building for `Android`, you should also [install and configure](https
 
 If you are building for `iOS/iPadOS`, you should also [install and configure](https://apps.apple.com/cn/app/xcode/id497799835) `Xcode`.
 
-Run the command 
+Run the command: 
 
-```
+```shell
 flutter pub get
 flutter pub global activate intl_utils
 dart run intl_utils:generate
