@@ -15,14 +15,14 @@ subprojects {
                 project.plugins.hasPlugin("com.android.library")) {
             project.android.compileSdkVersion = 35
 
-            // override Java version to 23
-            project.android.compileOptions.sourceCompatibility = JavaVersion.VERSION_23
-            project.android.compileOptions.targetCompatibility = JavaVersion.VERSION_23
+            // override Java version to 21
+            project.android.compileOptions.sourceCompatibility = JavaVersion.VERSION_21
+            project.android.compileOptions.targetCompatibility = JavaVersion.VERSION_21
 
-            // override Kotlin JVM target to 23 too
+            // override Kotlin JVM target to 21 too
             project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
                 kotlinOptions {
-                    jvmTarget = "23"
+                    jvmTarget = "21"
                 }
             }
 
