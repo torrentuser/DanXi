@@ -386,6 +386,7 @@
   "search_by_pid_tip": "「{pid}」ポストへ",
   "search_by_tag_tip": "このスペースのタグ「{tag}」のポストを見る",
   "search_by_text_tip": "本文中に「{searchKeyword}」を含むポストを検索する",
+  "search_by_text_accurate_tip": "本文中に「{searchKeyword}」を含むポストを精密検索する",
   "search_hint": "検索内容・#PID",
   "search_result": "検索結果",
   "seats": "座席数:{seats}",
@@ -530,5 +531,15 @@
   "use_webvpn_description": "有効時、一部の機能はFudan LANなしで、直接に連接するのができます (再起動が必要)",
   "show_this_person": "この人だけ",
   "select_all": "全選択",
-  "share_hole_title": "分け合う階層を選択する"
+  "share_hole_title": "分け合う階層を選択する",
+  "follow_system_palette": "システムカラーパレットに従う",
+  "follow_system_palette_description": "壁紙に基づくAndroid Material Youの動的カラーを使用する",
+  "next_course_setup": "スケジュールで設定後、更新",
+  "date_range_select": "日付範囲を選択",
+  "select_date_range_invalid_range": "開始日は終了日より前である必要があります",
+  "select_date_range_from": "開始：",
+  "select_date_range_to": "終了：",
+  "select_date_range_far_past": "遠い過去",
+  "select_date_range_now": "現在",
+  "hole_force_deleted": "削除され"
 }
