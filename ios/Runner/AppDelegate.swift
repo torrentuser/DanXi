@@ -77,7 +77,9 @@ import WatchConnectivity
               displayLink.add(to: .current, forMode: .default)
             }
         /* Flutter */
-        let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
+        guard let controller = window?.rootViewController as? FlutterViewController else {
+            fatalError("Unable to get FlutterViewController")
+        }
         let channel = FlutterMethodChannel(name: "fduhole", binaryMessenger: controller.binaryMessenger)
         channel.setMethodCallHandler({
             (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
@@ -128,10 +130,14 @@ import WatchConnectivity
     //quick_actions item click not work, should copy this method to AppDelegate.swift'
     // @see Issue (https://github.com/flutter/flutter/issues/46155)
     override func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        let controller = window.rootViewController as? FlutterViewController
+        guard let controller = window?.rootViewController as? FlutterViewController else {
+            completionHandler(false)
+            return
+        }
         
-        let channel = FlutterMethodChannel(name: "plugins.flutter.io/quick_actions", binaryMessenger: controller! as! FlutterBinaryMessenger)
+        let channel = FlutterMethodChannel(name: "plugins.flutter.io/quick_actions", binaryMessenger: controller.binaryMessenger)
         channel.invokeMethod("launch", arguments: shortcutItem.type)
+        completionHandler(true)
     }
 
     @objc func step(displaylink: CADisplayLink) {
@@ -150,8 +156,11 @@ extension AppDelegate {
     
     // This function will be called right after user tap on the notification
     override func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let controller = window.rootViewController as? FlutterViewController
-        let channel = FlutterMethodChannel(name: "fduhole", binaryMessenger: controller! as! FlutterBinaryMessenger)
+        guard let controller = window?.rootViewController as? FlutterViewController else {
+            completionHandler()
+            return
+        }
+        let channel = FlutterMethodChannel(name: "fduhole", binaryMessenger: controller.binaryMessenger)
         /*let application = UIApplication.shared
          if (application.applicationState == .active) {
          print("user tapped the notification bar when the app is in foreground")
